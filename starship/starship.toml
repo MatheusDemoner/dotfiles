@@ -1,0 +1,79 @@
+add_newline = false
+command_timeout = 1200
+
+format = "$username$hostname$directory$git_branch$git_status$package$python$nodejs$golang$rust$java$docker_context$kubernetes$conda$cmd_duration$line_break$character"
+
+[username]
+show_always = false
+style_user = "bold blue"
+style_root = "bold red"
+format = "[$user]($style)@"
+
+[hostname]
+ssh_only = true
+style = "bold blue"
+format = "[$hostname]($style) "
+
+[directory]
+truncation_length = 4
+truncate_to_repo = false
+style = "bold cyan"
+read_only = " [RO]"
+read_only_style = "bold red"
+
+[git_branch]
+symbol = "on "
+style = "bold purple"
+
+[git_status]
+format = "([$all_status$ahead_behind]($style) )"
+style = "bold purple"
+
+[package]
+symbol = "pkg "
+style = "bold white"
+
+[python]
+symbol = "py "
+style = "bold yellow"
+python_binary = ["python3", "python"]
+
+[nodejs]
+symbol = "node "
+style = "bold green"
+
+[golang]
+symbol = "go "
+style = "bold cyan"
+
+[rust]
+symbol = "rs "
+style = "bold red"
+
+[java]
+symbol = "java "
+style = "bold red"
+
+[docker_context]
+symbol = "docker "
+style = "bold blue"
+format = "[$symbol$context]($style) "
+
+[kubernetes]
+symbol = "k8s "
+style = "bold cyan"
+disabled = false
+format = "[$symbol$context( \\($namespace\\))]($style) "
+
+[conda]
+symbol = "conda "
+style = "bold green"
+
+[cmd_duration]
+min_time = 1000
+format = "took [$duration]($style) "
+style = "dimmed"
+
+[character]
+success_symbol = "[>](bold green)"
+error_symbol = "[>](bold red)"
